@@ -1,0 +1,57 @@
+$breakpoint-xs: 480px;
+$breakpoint-sm: 620px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1200px;
+
+@mixin media($media) {
+  @if $media == xs {
+    @media (max-width: $breakpoint-xs) {
+      @content;
+    }
+  } @else if $media == sm {
+    @media (min-width: $breakpoint-xs) and (max-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $media == md {
+    @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $media == lg {
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $media == xl {
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+}
+@mixin BackgroundStyle {
+  background-repeat: no-repeat;
+}
+
+@mixin Container {
+  width: 90%;
+  margin: auto;
+}
+
+@mixin RowContainer {
+  display: flex;
+}
+
+@mixin ListClean {
+  list-style: none;
+}
+
+@mixin BtnPrimary($color, $border, $txtColor) {
+  background-color: $color;
+  padding: 16px 30px;
+  border: $border;
+  border-radius: 50px;
+  text-transform: uppercase;
+  color: $txtColor;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+}

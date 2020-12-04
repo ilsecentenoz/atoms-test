@@ -1,0 +1,636 @@
+@import "./mixins.scss";
+$purple: #a86ad1;
+$aqua: #66c8db;
+$gray: #f7f8fa;
+$gray-secundary: #847f83;
+$gray-strong: #cfccd3;
+$blue: #122bb5;
+$black: #1b2222;
+$white: #ffffff;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans JP";
+  margin: 0;
+  padding: 0;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+h1 {
+  font-size: 45px;
+  font-weight: 900;
+}
+
+p {
+  font-size: 16px;
+  color: $gray-secundary;
+}
+ul {
+  list-style: none;
+}
+.title {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  h1 {
+    display: inline;
+    &:after {
+      display: block;
+      clear: both;
+      content: "";
+      position: relative;
+      left: 0;
+      bottom: 0;
+      max-width: 80px;
+      height: 1px;
+      width: 50%;
+      border-bottom: 1px solid $purple;
+      margin: 10px auto;
+      padding: 4px 0px;
+    }
+  }
+}
+
+#intro {
+  @include BackgroundStyle;
+  background-image: url("../images/bg-4.svg");
+  background-size: 100%;
+  .container {
+    @include RowContainer;
+    @include Container;
+    margin-top: 130px;
+    .text {
+      margin-right: 30px;
+      span {
+        color: $purple;
+      }
+      h1 {
+        margin: 0;
+      }
+      h2 {
+        width: 650px;
+        color: $gray-secundary;
+        font-weight: 400;
+      }
+      h3 {
+        color: $aqua;
+        font-weight: 400;
+      }
+      .contentButtons {
+        @include RowContainer;
+        margin-top: 40px;
+        button {
+          @include BtnPrimary($purple, 0, $white);
+          margin-right: 30px;
+          &:nth-child(1) {
+            background-color: $aqua;
+            display: flex;
+            align-items: center;
+            img {
+              margin-left: 12px;
+            }
+          }
+        }
+      }
+    }
+    .shadowContent {
+      background-color: $white;
+      -webkit-box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.95);
+      box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.9);
+      border-radius: 10px;
+      padding: 15px 30px;
+      .content {
+        .rangeContainer {
+          border-bottom: 3px solid $gray;
+          margin-bottom: 20px;
+          .range {
+            margin-top: 5px;
+            text-align: end;
+            label {
+              margin-bottom: 20px;
+            }
+            .rc-slider {
+              padding: 20px 0;
+              .rc-slider-track {
+                background-color: $purple;
+              }
+              .rc-slider-handle {
+                background-color: $purple;
+                border: 2px solid $purple;
+              }
+            }
+          }
+        }
+        h2 {
+          text-align: center;
+          font-size: 20px;
+          text-transform: uppercase;
+        }
+        .plazo {
+          text-align: center;
+          border-bottom: 3px solid $gray;
+          margin-bottom: 20px;
+          .btnRadious {
+            @include RowContainer;
+            justify-content: space-around;
+            margin: 0 40px;
+            button {
+              margin: 10px;
+              border: 1px solid $purple;
+              background-color: transparent;
+              border-radius: 100%;
+              padding: 15px;
+              outline: none;
+              font-weight: 400;
+            }
+            .active {
+              background-color: $purple;
+              color: white;
+            }
+          }
+        }
+        form {
+          div {
+            text-align: end;
+            margin: 30px 0;
+            label {
+              color: $gray-secundary;
+            }
+            input {
+              border: 1px solid $gray-secundary;
+              border-radius: 30px;
+              float: right;
+              padding: 8px;
+              text-align: center;
+              outline: none;
+              margin: 0 10px;
+            }
+          }
+          button {
+            @include BtnPrimary($purple, 0, $white);
+            margin: 50px auto;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+#features {
+  @include Container;
+  margin-top: 100px;
+  margin-bottom: 150px;
+  .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 100px;
+    div {
+      margin: 30px 50px;
+      h3 {
+        font-weight: 400;
+        &:after {
+          display: block;
+          clear: both;
+          content: "";
+          position: relative;
+          left: 0;
+          bottom: 0;
+          max-width: 50px;
+          height: 1px;
+          width: 50%;
+          border-bottom: 1px solid $purple;
+          margin: 10px 0;
+          padding: 4px 0px;
+        }
+      }
+    }
+  }
+}
+
+#pricing {
+  @include Container;
+  margin-top: 100px;
+  margin-bottom: 150px;
+  .content {
+    .time {
+      ul {
+        @include RowContainer;
+        justify-content: center;
+        li {
+          margin: 50px 40px;
+          color: $gray-secundary;
+          &.active {
+            padding-bottom: 10px;
+            border-bottom: 1px solid $purple;
+          }
+        }
+      }
+    }
+    .pricingList {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      div {
+        border-right: 2px solid $gray;
+        text-align: center;
+        h3 {
+          font-size: 24px;
+          font-weight: 900;
+          &:after {
+            display: block;
+            clear: both;
+            content: "";
+            position: relative;
+            left: 0;
+            bottom: 0;
+            max-width: 60px;
+            height: 1px;
+            width: 30%;
+            border-bottom: 1px solid $purple;
+            margin: 8px auto;
+          }
+        }
+        p {
+          color: $black;
+          font-weight: bold;
+          span {
+            font-size: 40px;
+          }
+        }
+        ul {
+          text-align: start;
+          li {
+            padding-bottom: 10px;
+            font-size: 14px;
+            font-weight: 100;
+            padding: 8px 30px;
+          }
+        }
+        .check {
+          background: url("../images/icons/checked-pricing.png") no-repeat 0px;
+        }
+        .checkWhite {
+          background: url("../images/icons/checked-pricing-white.png") no-repeat
+            0px;
+        }
+        button {
+          @include BtnPrimary(transparent, 1px solid $aqua, $aqua);
+          margin-bottom: 40px;
+          padding: 12px 60px;
+        }
+      }
+      .pro {
+        background-color: $purple;
+        color: $white;
+        border-right: 0;
+        -webkit-box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.95);
+        box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.95);
+        .clip-path {
+          width: 0;
+          height: 0;
+          border-right: 100px solid transparent;
+          border-left: 100px solid $aqua;
+          border-bottom: 100px solid transparent;
+          position: absolute;
+          p {
+            position: relative;
+            left: -90px;
+            transform: rotate(-48deg);
+            top: 25px;
+            font-weight: 100;
+          }
+        }
+        h3 {
+          font-size: 30px;
+          font-size: bold;
+          margin-bottom: 0;
+          &:after {
+            display: block;
+            clear: both;
+            content: "";
+            position: relative;
+            left: 0;
+            bottom: 0;
+            max-width: 30px;
+            height: 1px;
+            width: 30%;
+            border-bottom: 1px solid $white;
+            margin: 8px auto;
+          }
+        }
+        p {
+          color: $white;
+          span {
+            font-size: 40px;
+          }
+        }
+        button {
+          @include BtnPrimary($aqua, 0, $white);
+          padding: 12px 60px;
+        }
+      }
+    }
+  }
+}
+
+#api {
+  background-color: $gray;
+  padding: 50px 0;
+  .cm-s-undefined {
+    width: 80%;
+    margin: auto;
+    padding: 50px;
+    background-color: $white;
+    font-size: 16px;
+    color: $blue;
+  }
+  .buttonContainer {
+    background-color: $gray-strong;
+    width: 80%;
+    margin: auto;
+    padding: 30px 20px;
+    text-align: end;
+    button {
+      @include BtnPrimary($purple, 0, $white);
+      margin-right: 20px;
+      &:nth-child(1) {
+        @include BtnPrimary($aqua, 0, $white);
+      }
+    }
+  }
+}
+
+#map {
+  @include BackgroundStyle;
+  width: 100%;
+  height: 50em;
+  background-image: url("../images/world-bg.png");
+  background-size: 85%;
+  background-color: $gray;
+  padding: 50px 0;
+  background-position: center;
+  margin-bottom: 150px;
+}
+
+#faq {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 150px;
+  @include Container;
+  .text {
+    h1 {
+      margin-right: 20px;
+      margin-top: 0;
+    }
+    p {
+      margin-right: 270px;
+    }
+    ul {
+      padding: 0;
+      li {
+        background: url("../images/icons/checked.png") no-repeat 0px;
+        padding: 8px 40px;
+      }
+    }
+  }
+  .collapseContainer {
+    .cardCollapse {
+      width: 100%;
+      margin: auto;
+      .cardHeader {
+        display: block;
+        border-bottom: 1px solid #eaeaea !important;
+        transition: all 0.25s ease-out;
+        display: block;
+        font-size: 16px;
+        text-align: left;
+        cursor: pointer;
+        transition: all 0.25s ease-out;
+        p {
+          font-size: 18px;
+          font-family: "Lato", sans-serif;
+          font-weight: 200;
+          color: #333333;
+          margin: 0;
+          padding: 20px;
+          &::before {
+            content: "";
+            width: 30px;
+            height: 30px;
+            background: url("../images/icons/drop-down-faq.png") no-repeat;
+            right: 75px;
+            position: absolute;
+            display: inline-block;
+          }
+        }
+      }
+
+      .toggle:checked + .cardHeader {
+        p {
+          background-color: $aqua;
+          color: $white;
+        }
+      }
+
+      .toggle:checked + .cardHeader p::before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        background: url("../images/icons/drop-down-faq-selected.png") no-repeat
+          20px 20px;
+        right: 75px;
+        position: absolute;
+        display: inline-block;
+        transform: rotate(180deg);
+      }
+
+      .toggle:checked + .cardHeader {
+        + .cardContent {
+          max-height: 350px;
+          padding: 5px 0px 40px;
+          border-bottom: 1px solid #eaeaea;
+        }
+      }
+
+      .cardContent {
+        max-height: 0px;
+        overflow: hidden;
+        transition: all 0.25s ease-in-out;
+        background-color: $gray;
+        p {
+          font-family: "Lato", sans-serif;
+          font-weight: 200;
+          font-size: 18px;
+          padding: 20px;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+#support {
+  margin-top: 200px;
+  .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include Container;
+    .card {
+      background-color: $gray;
+      margin: 0 30px;
+      padding: 50px;
+      position: relative;
+      flex-direction: column;
+      h3 {
+        &:after {
+          display: block;
+          clear: both;
+          content: "";
+          position: relative;
+          left: 0;
+          bottom: 0;
+          max-width: 40px;
+          height: 1px;
+          width: 50%;
+          border-bottom: 1px solid $aqua;
+          margin: 5px 0;
+          padding: 4px 0px;
+        }
+      }
+      button {
+        @include BtnPrimary($purple, 0, $white);
+        padding: 12px 15px;
+        font-size: 11px;
+      }
+      .hoverCard {
+        background: $aqua;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        flex-direction: column;
+        color: $white;
+        padding: 60px;
+        transition: all 0.5s ease-in;
+      }
+      &:hover {
+        h3 {
+          &:after {
+            display: block;
+            clear: both;
+            content: "";
+            position: relative;
+            left: 0;
+            bottom: 0;
+            max-width: 100px;
+            height: 1px;
+            width: 50%;
+            border-bottom: 1px solid $white;
+            margin: 5px 0;
+            padding: 4px 0px;
+          }
+        }
+        p {
+          color: $white;
+        }
+        button {
+          @include BtnPrimary(transparent, 1px solid $white, $white);
+          padding: 12px 15px;
+          margin-top: 10px;
+        }
+        .hoverCard {
+          top: 0px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+#clients {
+  .content {
+    @include Container;
+    @include RowContainer;
+    justify-content: space-between;
+    align-items: center;
+    img {
+      padding: 90px 30px;
+    }
+  }
+}
+
+footer {
+  background-image: url("../images/footer-bg.jpg");
+  @include BackgroundStyle;
+  background-size: cover;
+  padding-bottom: 50px;
+  .content {
+    width: 100%;
+    padding: 100px 40px;
+    background-image: url("../images/Rectangle-2.svg");
+    @include BackgroundStyle;
+    background-size: cover;
+    h1 {
+      font-weight: 100;
+      margin-top: 0;
+      span {
+        color: $purple;
+        font-weight: 700;
+      }
+    }
+    .text {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 15em;
+      @include Container;
+      p {
+        margin: 0;
+      }
+      button {
+        @include BtnPrimary($aqua, 0, $white);
+        padding: 22px 80px;
+        border-radius: 28px;
+        position: relative;
+        top: 80px;
+        left: 155px;
+      }
+    }
+  }
+  .contentFooter {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    width: 80%;
+    margin: 90px auto;
+    .infoPage {
+      .socialMedia {
+        padding: 0;
+        li {
+          img {
+            width: 25px;
+            margin: 40px 20px 0px 0;
+          }
+        }
+      }
+    }
+    .listItems {
+      ul {
+        padding: 0;
+        margin: auto;
+        display: block;
+        width: 50%;
+        li {
+          padding: 5px 0;
+        }
+      }
+    }
+  }
+}

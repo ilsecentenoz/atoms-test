@@ -55,3 +55,26 @@ $breakpoint-xl: 1200px;
   outline: none;
   cursor: pointer;
 }
+
+@mixin ImageMap($size, $border) {
+  width: $size;
+  border-radius: 100%;
+  border: $border;
+  -webkit-box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.95);
+  box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.3);
+}
+
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+
+@mixin translate($x, $y) {
+  @include transform(translate($x, $y));
+}

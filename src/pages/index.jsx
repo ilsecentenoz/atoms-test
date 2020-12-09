@@ -4,13 +4,12 @@ import Header from "../components/header"
 import SEO from "../components/seo"
 import "../styles/index.scss"
 //dependencis
-import Slider, { Range } from "rc-slider"
-import "rc-slider/assets/index.css"
 import CodeMirror from "codemirror"
 import "codemirror/addon/runmode/runmode"
 import "codemirror/mode/meta"
 import "codemirror/mode/javascript/javascript"
 import Highlighter from "react-codemirror-runmode"
+import Simulator from "../components/Simulator.jsx"
 
 //assets
 import Play from "../images/icons/btn-play.png"
@@ -31,6 +30,12 @@ import Client5 from "../images/icons/clients/clients-logo5.png"
 import Twitter from "../images/icons/twitter.png"
 import Facebook from "../images/icons/facebook.png"
 import Linkedin from "../images/icons/linkedin.png"
+import Avatar1 from "../images/avatar-1.jpg"
+import Avatar2 from "../images/avatar-2.jpg"
+import Avatar3 from "../images/avatar-3.jpg"
+import Avatar4 from "../images/avatar-4.jpg"
+import Avatar5 from "../images/avatar-5.jpg"
+import Avatar6 from "../images/avatar-6.jpg"
 
 export default function index() {
   return (
@@ -59,52 +64,7 @@ export default function index() {
                 <button className="btnPrimary">Start now</button>
               </div>
             </div>
-            <div className="shadowContent">
-              <div className="content">
-                <h2>Simulador de Crédito</h2>
-                <div className="rangeContainer">
-                  <div className="range">
-                    <label htmlFor="">Monto deseado</label>
-                    <Slider />
-                  </div>
-                  <div className="range">
-                    <label htmlFor="">Tasa Anual</label>
-                    <Slider />
-                  </div>
-                </div>
-                <div className="plazo">
-                  <h3>Plazo en meses</h3>
-                  <div className="btnRadious">
-                    <button className="active">12</button>
-                    <button>24</button>
-                    <button>36</button>
-                  </div>
-                </div>
-                <form>
-                  <div>
-                    <label htmlFor="">Pago mensual</label>
-                    <input type="text" readOnly value="880.64" />
-                  </div>
-                  <div>
-                    <label htmlFor="">Comisión por apertura</label>
-                    <input type="text" readOnly />
-                  </div>
-                  <div>
-                    <label htmlFor="">Monto neto Depositado</label>
-                    <input type="text" readOnly />
-                  </div>
-                  <div>
-                    <label htmlFor="">Total pagado</label>
-                    <input type="text" readOnly />
-                  </div>
-                  <div>
-                    <label htmlFor="cat">CAT</label>
-                    <input id="cat" value="15.71" type="text" readOnly />
-                  </div>
-                  <button>Solicitar mi crédito</button>
-                </form>
-              </div>
-            </div>
+            <Simulator />
           </div>
           <section id="features">
             <div className="title">
@@ -339,6 +299,13 @@ export default function index() {
           <div className="title">
             <h1>Trusted by world experts</h1>
           </div>
+          <img src={Avatar1} alt="avatar" />
+          <img src={Avatar2} alt="avatar" />
+          <img src={Avatar3} alt="avatar" />
+          <img src={Avatar4} alt="avatar" />
+          <img src={Avatar5} alt="avatar" />
+          <img src={Avatar6} alt="avatar" />
+          <img src={Avatar2} alt="avatar" />
         </section>
         <section id="faq">
           <div className="text">
